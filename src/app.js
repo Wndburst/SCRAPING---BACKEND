@@ -27,26 +27,26 @@ module.exports = app; // Exportar la instancia de Express
 app.use('/api/auth', authRoutes);
 
 // Api de productos mimbral
-app.use('/api/mimbral',verifyToken, productosRoutes);
+app.use('/api/mimbral', productosRoutes);
 
 // Scrap a url
-app.use('/api/scrape',verifyToken, scrapingRoutes);
+app.use('/api/scrape', scrapingRoutes);
 
 // API de productos externos
-app.use('/api/externos',verifyToken, tiendaExterna);
+app.use('/api/externos', tiendaExterna);
 
 
 // API Asociaciones
-app.use('/api/asociaciones',verifyToken, asociacionesRoutes);
+app.use('/api/asociaciones', asociacionesRoutes);
 
 // Documentación Swagger
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 // crear y asociar
-app.use('/api/scrapandassociate',verifyToken, scrapingAndAssociate);
+app.use('/api/scrapandassociate', scrapingAndAssociate);
 
 // otros
-app.use('/api/marcas',verifyToken, marcasRoutes);
-app.use('/api/categorias',verifyToken, categoriasRoutes);
-app.use('/api/tiendas',verifyToken, tiendasRoutes);
+app.use('/api/marcas', marcasRoutes);
+app.use('/api/categorias', categoriasRoutes);
+app.use('/api/tiendas', tiendasRoutes);
